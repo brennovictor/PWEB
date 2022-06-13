@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ReceitaReact - Classes</title>      
+   </head>
+   <body>
+      <div id="app">
+      </div>
+
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+      <script src="libs/babel.js"></script>
+
+      <script type="text/babel">
+		
+          const TabelaBebidas = ({titulo, cabecalhos, corpo}) => {
+
+            return (
+		          <div>
+                  <h1>{titulo}</h1>
+                  <table id="tabela" border="1">
+                     <thead>
+                        <tr>{cabecalhos.map(i => <td>{i}</td>)}</tr>
+                     </thead>
+                     <tbody>
+                        {corpo.map(row =>  
+                            <tr>{row.map(i => <td>{i}</td>)}</tr>
+                        )}
+                     </tbody>
+                  </table>
+		        </div>
+			      )
+         }
+
+         ReactDOM.render(
+            <TabelaBebidas titulo="minha tabela de cana" cabecalhos={
+		        ["Nome", "Marca"]
+            } corpo={[
+            ["Havana", "Engenho Anísio Santiago"]
+            ]}/>
+            ,
+            document.getElementById("app"))
+      </script>
+   </body>
+</html>
