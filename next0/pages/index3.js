@@ -1,5 +1,5 @@
-import function {function_1} from './index.js';
-import function {function_2} from './index2.js';
+import {function_1} from './index.js';
+import {function_2} from './index2.js';
 
 
 export default function Home() {
