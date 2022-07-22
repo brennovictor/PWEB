@@ -9,18 +9,13 @@ export default function Movies2(){
     if (!data) return <div>carregando...</div>
 
     return (
-
-        <div>
-
-            { data.Search.map( (m) => <div>{m.Title} --- {m.Year}</div>  ) }
-
-        </div>
-
-    )    
-
+      <div>
+        {data.Search.map((m) => (<div> <a href={
+        `https://www.imdb.com/title/${m.imdbID}`}>
+        {m.Title} --- {m.Year}</a> </div>))}
+      </div>
+  );
 }
-
-
 
 async function fetcher(url) {
 
